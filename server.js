@@ -13,20 +13,22 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json()); 
 
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST, // Endereço do banco de dados remoto
+    host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT // Se estiver usando uma porta diferente
 });
 
-// Conectar ao banco de dados
+
 connection.connect((err) => {
     if (err) {
-        console.error('❌ Erro ao conectar ao banco de dados:', err);
-    } else {
-        console.log('✅ Conectado ao banco de dados MySQL.');
+        console.error('Erro ao conectar ao banco de dados:', err);
+        return res.status(500).json({ error: 'Erro ao conectar ao banco de dados', details: err.message });
     }
+    console.log('Conectado ao banco de dados');
 });
+
 
 // Configuração de sessão usando MySQL
 const sessionStore = new MySQLStore({}, connection);
