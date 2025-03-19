@@ -57,12 +57,12 @@ app.get('/painel.html', (req, res) => {
     if (!req.session.authenticated) {
         return res.redirect('/index.html'); // Se não estiver autenticado, vai para o login
     }
-    res.sendFile(path.join(__dirname, 'public', 'painel.html')); // Serve a página do painel
+    res.sendFile(path.join(__dirname, 'painel.html')); // Serve a página do painel
 });
 
 // Rota para consultar serviços
 app.get('/consultar', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'consultar.html'));
+    res.sendFile(path.join(__dirname, 'consultar.html'));
 });
 
 // Configuração do Multer para uploads de arquivos
