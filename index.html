@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Entrar</h1>
+
+    <!-- Container para mensagens de erro ou sucesso -->
+    <div id="message-container"></div>
+
+    <form id="login-form">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Mensagem informando sobre a consulta de status -->
+    <p style="margin-top: 20px; font-size: 14px; color: #333;">
+        Para consultar o status da manutenção, basta clicar no botão <strong>"Cliente"</strong> abaixo.
+    </p>
+
+    <!-- Botão Cliente com link funcionando -->
+    <button id="cliente-btn">
+        <a href="consultar.html">Cliente</a>
+    </button>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

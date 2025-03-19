@@ -1,0 +1,110 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a tipografia e o fundo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título da página */
+h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Lista de serviços */
+#lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Cada serviço será um quadrado */
+.servico {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.servico:hover {
+    background-color: #ecf0f1;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Destacando o nome do dono */
+.servico h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+/* Informações resumidas do serviço */
+.servico p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+/* Quando um serviço for clicado, ele expande */
+.servico.expandido {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o conteúdo expandido */
+.servico.expandido .detalhes {
+    display: block;
+    font-size: 14px;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+/* Detalhes adicionais do serviço, inicialmente ocultos */
+.detalhes {
+    display: none;
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 15px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .servico {
+        padding: 10px;
+    }
+
+    .servico h3 {
+        font-size: 18px;
+    }
+
+    .servico p {
+        font-size: 12px;
+    }
+}

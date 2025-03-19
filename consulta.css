@@ -1,0 +1,296 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinhar no topo para dispositivos móveis */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para a barra de progresso */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    height: 20px;
+    background-color: #007bff;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Estilos para os campos de resultado */
+.result-field {
+    margin-bottom: 15px;
+}
+
+.result-field strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+/* Estilos para a barra de progresso */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    height: 20px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Cores para cada status */
+.progress-bar-fill.agendado {
+    background-color: #808080; /* Cinza */
+}
+
+.progress-bar-fill.pendente {
+    background-color: #ffa500; /* Laranja */
+}
+
+.progress-bar-fill.aprovacao-cliente {
+    background-color: #ffd700; /* Amarelo */
+}
+
+.progress-bar-fill.em-andamento {
+    background-color: #007bff; /* Azul */
+}
+
+.progress-bar-fill.aguardando-pecas {
+    background-color: #800080; /* Roxo */
+}
+
+.progress-bar-fill.concluido {
+    background-color: #28a745; /* Verde */
+}
+
+.progress-bar-fill.nao-resolvido {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.progress-bar-fill.cancelado {
+    background-color: #dc3545; /* Vermelho */
+} 
+
+.result-field p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+/* Estilo da mensagem explicativa */
+.info-message {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px; /* Espaçamento abaixo da mensagem */
+    text-align: center; /* Alinhar a mensagem ao centro */
+}
+
+/* Seção de pesquisa */
+.search-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.search-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-section label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+.search-section input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-section button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Seção de resultados */
+.result-section {
+    margin-top: 20px;
+}
+
+.result-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#result-content {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Seção de imagens (antes e depois) */
+.image-section {
+    margin-top: 20px;
+}
+
+.image-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Container para as imagens antes e depois */
+#image-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.image-container div {
+    width: 45%;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilos para as imagens dentro de cada container (antes e depois) */
+#image-content div {
+    width: 100%; /* Definir uma largura de 45% para cada imagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-content img {
+    width: 100%; /* Imagem ocupa 100% do seu contêiner */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título das imagens (Antes/Depois) */
+#image-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .search-section h1 {
+        font-size: 20px;
+    }
+
+    .search-section input {
+        font-size: 14px;
+    }
+
+    .search-section button {
+        font-size: 14px;
+    }
+
+    .result-section h2 {
+        font-size: 18px;
+    }
+
+    #result-content {
+        font-size: 14px;
+    }
+
+    /* Estilos responsivos para a seção de imagens (Antes/Depois) */
+    #image-content {
+        flex-direction: column; /* Empilhar as imagens em telas menores */
+        align-items: center;
+        gap: 10px;
+    }
+
+    #image-content div {
+        width: 80%; /* Deixar as imagens maiores em telas pequenas */
+    }
+
+    #image-content h3 {
+        font-size: 16px;
+    }
+
+    #image-content img {
+        width: 100%; /* Aumenta o tamanho da imagem para preencher a tela */
+        max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+    }
+}

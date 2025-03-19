@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Domiciliar</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <style>
+        /* Estilo para a visualização das imagens */
+        .image-preview {
+            margin-top: 10px;
+        }
+        .image-preview img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Atendimento Domiciliar</h2>
+    <form action="/salvar-servico" method="POST" enctype="multipart/form-data">
+        
+        <label for="codigo_acompanhamento">Código de Acompanhamento:</label>
+        <input type="text" id="codigo_acompanhamento" name="codigo_acompanhamento" maxlength="6" required>
+
+        <label for="nome">Nome do Cliente:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="computador">Tipo de Equipamento:</label>
+        <input type="text" id="computador" name="computador" placeholder="Ex: Notebook, PC, etc." required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="+55 11 91234-5678" required>
+
+        <label for="endereco">Endereço:</label>
+        <textarea id="endereco" name="endereco" rows="2" required></textarea>
+
+        <label for="problema">Descrição do Problema:</label>
+        <textarea id="problema" name="problema" rows="3" required></textarea>
+
+        <label for="status">Status Inicial:</label>
+        <select id="status" name="status">
+            <option value="agendado">Agendado</option>
+            <option value="em andamento">Em Andamento</option>
+            <option value="aguardando peças">Aguardando Peças</option>
+            <option value="aprovacao cliente">Aprovação Cliente</option>
+            <option value="concluído">Concluído</option>
+            <option value="cancelado">Cancelado</option>
+            <option value="não resolvido">Não Resolvido</option>
+        </select>
+
+        <label for="tecnico">Técnico Responsável:</label>
+        <input type="text" id="tecnico" name="tecnico">
+
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+        <label for="imagem1">Imagem 1 do Serviço (se necessário):</label>
+        <input type="file" id="imagem1" name="imagem1" accept="image/*">
+
+        <label for="imagem2">Imagem 2 do Serviço (se necessário):</label>
+        <input type="file" id="imagem2" name="imagem2" accept="image/*">
+
+        <!-- Div para mostrar as imagens selecionadas -->
+        <div class="image-preview" id="image-preview">
+            <!-- As imagens selecionadas serão exibidas aqui -->
+        </div>
+
+        <button type="submit">Enviar</button>
+        <div id="mensagem" style="display:none; padding: 10px; margin-top: 10px;"></div>
+
+    </form>
+
+    <script>
+        // Função para mostrar a pré-visualização das imagens selecionadas
+        const imagem1Input = document.getElementById('imagem1');
+        const imagem2Input = document.getElementById('imagem2');
+        const imagePreview = document.getElementById('image-preview');
+
+        imagem1Input.addEventListener('change', previewImages);
+        imagem2Input.addEventListener('change', previewImages);
+
+        function previewImages() {
+            // Limpar a visualização anterior
+            imagePreview.innerHTML = '';
+            
+            // Exibir imagem 1
+            if (imagem1Input.files && imagem1Input.files[0]) {
+                const img1 = document.createElement('img');
+                img1.src = URL.createObjectURL(imagem1Input.files[0]);
+                imagePreview.appendChild(img1);
+            }
+
+            // Exibir imagem 2
+            if (imagem2Input.files && imagem2Input.files[0]) {
+                const img2 = document.createElement('img');
+                img2.src = URL.createObjectURL(imagem2Input.files[0]);
+                imagePreview.appendChild(img2);
+            }
+        }
+    </script>
+
+    <script src="services.js"></script>
+</body>
+</html>
